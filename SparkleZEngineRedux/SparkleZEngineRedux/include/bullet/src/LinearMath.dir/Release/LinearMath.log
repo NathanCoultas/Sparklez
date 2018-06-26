@@ -1,0 +1,14 @@
+﻿  Building Custom Rule C:/temp/bullet3-2.87/src/LinearMath/CMakeLists.txt
+  The system cannot find the drive specified.
+  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btSerializer64.cpp
+  btThreads.cpp
+  btVector3.cpp
+  Generating Code...
+  LinearMath.vcxproj -> C:\temp\bullet3-2.87\BUILD2\lib\Release\LinearMath.lib

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C8C7885-BD3B-452F-8F67-E49DAADC149A}</ProjectGuid>
+    <RootNamespace>SparkleZEngineRedux</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)SparkleZEngineRedux/include/bullet/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)SparkleZEngineRedux/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew.lib;SDL2.lib;SDL2main.lib;opengl32.lib;/NODEFAULTLIB:MSVCRT;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)SparkleZEngineRedux/include/bullet/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)SparkleZEngineRedux/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);glew.lib;SDL2.lib;SDL2main.lib;opengl32.lib;/NODEFAULTLIB:MSVCRT;</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="include\Application.cpp" />
+    <ClCompile Include="include\Audiosource.cpp" />
+    <ClCompile Include="include\Behaviour.cpp" />
+    <ClCompile Include="include\BehaviourTemplate.cpp" />
+    <ClCompile Include="include\BoundsBox.cpp" />
+    <ClCompile Include="include\BoxCollider.cpp" />
+    <ClCompile Include="include\Camera.cpp" />
+    <ClCompile Include="include\CharacterController.cpp" />
+    <ClCompile Include="include\Colour.cpp" />
+    <ClCompile Include="include\Component.cpp" />
+    <ClCompile Include="include\Console.cpp" />
+    <ClCompile Include="include\Editor.cpp" />
+    <ClCompile Include="include\GameObject.cpp" />
+    <ClCompile Include="include\GraphicsCache.cpp" />
+    <ClCompile Include="include\Input.cpp" />
+    <ClCompile Include="include\Light.cpp" />
+    <ClCompile Include="include\main.cpp" />
+    <ClCompile Include="include\Material.cpp" />
+    <ClCompile Include="include\Mesh.cpp" />
+    <ClCompile Include="include\MeshFilter.cpp" />
+    <ClCompile Include="include\MeshRenderer.cpp" />
+    <ClCompile Include="include\Object.cpp" />
+    <ClCompile Include="include\Rigidbody.cpp" />
+    <ClCompile Include="include\SceneManager.cpp" />
+    <ClCompile Include="include\Shader.cpp" />
+    <ClCompile Include="include\SphereCollider.cpp" />
+    <ClCompile Include="include\Transform.cpp" />
+    <ClCompile Include="include\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Application.h" />
+    <ClInclude Include="include\AudioSource.h" />
+    <ClInclude Include="include\Behaviour.h" />
+    <ClInclude Include="include\BoundsBox.h" />
+    <ClInclude Include="include\BoxCollider.h" />
+    <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\CharacterController.h" />
+    <ClInclude Include="include\Colour.h" />
+    <ClInclude Include="include\Component.h" />
+    <ClInclude Include="include\Console.h" />
+    <ClInclude Include="include\Editor.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\GraphicsCache.h" />
+    <ClInclude Include="include\Input.h" />
+    <ClInclude Include="include\Light.h" />
+    <ClInclude Include="include\Material.h" />
+    <ClInclude Include="include\Mesh.h" />
+    <ClInclude Include="include\MeshFilter.h" />
+    <ClInclude Include="include\MeshRenderer.h" />
+    <ClInclude Include="include\Object.h" />
+    <ClInclude Include="include\Rigidbody.h" />
+    <ClInclude Include="include\SceneManager.h" />
+    <ClInclude Include="include\Shader.h" />
+    <ClInclude Include="include\SphereCollider.h" />
+    <ClInclude Include="include\Transform.h" />
+    <ClInclude Include="include\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="include\bullet\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{8eadcefa-856e-3871-9d2c-40635cf0961f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="include\bullet\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{3d7ce821-c040-3bd4-a1c6-e44f16216a2a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="include\bullet\src\LinearMath\LinearMath.vcxproj">
+      <Project>{e40d46b1-d54d-3f24-891f-4bd0142189be}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

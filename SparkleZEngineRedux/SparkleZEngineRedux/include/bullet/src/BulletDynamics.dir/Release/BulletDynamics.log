@@ -1,0 +1,43 @@
+﻿  Building Custom Rule C:/temp/bullet3-2.87/src/BulletDynamics/CMakeLists.txt
+  The system cannot find the drive specified.
+  btKinematicCharacterController.cpp
+  btConeTwistConstraint.cpp
+  btContactConstraint.cpp
+  btFixedConstraint.cpp
+  btGearConstraint.cpp
+  btGeneric6DofConstraint.cpp
+  btGeneric6DofSpringConstraint.cpp
+  btGeneric6DofSpring2Constraint.cpp
+  btHinge2Constraint.cpp
+  btHingeConstraint.cpp
+  btPoint2PointConstraint.cpp
+  btSequentialImpulseConstraintSolver.cpp
+  btNNCGConstraintSolver.cpp
+  btSliderConstraint.cpp
+  btSolve2LinearConstraint.cpp
+  btTypedConstraint.cpp
+  btUniversalConstraint.cpp
+  btDiscreteDynamicsWorld.cpp
+  btDiscreteDynamicsWorldMt.cpp
+  btSimulationIslandManagerMt.cpp
+  Generating Code...
+  Compiling...
+  btRigidBody.cpp
+  btSimpleDynamicsWorld.cpp
+  btRaycastVehicle.cpp
+  btWheelInfo.cpp
+  btMultiBody.cpp
+  btMultiBodyConstraintSolver.cpp
+  btMultiBodyDynamicsWorld.cpp
+  btMultiBodyJointLimitConstraint.cpp
+  btMultiBodyConstraint.cpp
+  btMultiBodyPoint2Point.cpp
+  btMultiBodyFixedConstraint.cpp
+  btMultiBodySliderConstraint.cpp
+  btMultiBodyJointMotor.cpp
+  btMultiBodyGearConstraint.cpp
+  btDantzigLCP.cpp
+  btMLCPSolver.cpp
+  btLemkeAlgorithm.cpp
+  Generating Code...
+  BulletDynamics.vcxproj -> C:\temp\bullet3-2.87\BUILD2\lib\Release\BulletDynamics.lib

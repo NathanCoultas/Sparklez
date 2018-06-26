@@ -1,0 +1,109 @@
+﻿  Application.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(83): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(152): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(155): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(244): warning C4244: 'argument': conversion from 'Sint32' to 'float', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(245): warning C4244: 'argument': conversion from 'Sint32' to 'float', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(287): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\application.cpp(138): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::MeshRenderer> sparklezEngine::GameObject::getComponent<sparklezEngine::MeshRenderer>(void)' being compiled
+  Audiosource.cpp
+  Behaviour.cpp
+  BehaviourTemplate.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  BoundsBox.cpp
+  BoxCollider.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\boxcollider.cpp(18): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::MeshFilter> sparklezEngine::GameObject::getComponent<sparklezEngine::MeshFilter>(void)' being compiled
+  Camera.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\camera.cpp(114): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\camera.cpp(28): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::Camera> sparklezEngine::GameObject::getComponent<sparklezEngine::Camera>(void)' being compiled
+  CharacterController.cpp
+  Colour.cpp
+  Component.cpp
+  Console.cpp
+  Editor.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  GameObject.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.cpp(120): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.cpp(112): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::Transform> sparklezEngine::GameObject::getComponent<sparklezEngine::Transform>(void)' being compiled
+  GraphicsCache.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\graphicscache.cpp(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\graphicscache.cpp(88): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\graphicscache.cpp(154): warning C4018: '<': signed/unsigned mismatch
+  Input.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\input.cpp(25): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\input.cpp(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\input.cpp(54): warning C4018: '<': signed/unsigned mismatch
+  Light.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\light.cpp(21): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::PointLight> sparklezEngine::GameObject::getComponent<sparklezEngine::PointLight>(void)' being compiled
+  main.cpp
+  Material.cpp
+  Mesh.cpp
+  MeshFilter.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\meshfilter.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  MeshRenderer.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\meshrenderer.cpp(31): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::MeshFilter> sparklezEngine::GameObject::getComponent<sparklezEngine::MeshFilter>(void)' being compiled
+  Object.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  Rigidbody.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\rigidbody.cpp(23): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::BoxCollider> sparklezEngine::GameObject::getComponent<sparklezEngine::BoxCollider>(void)' being compiled
+  SceneManager.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\scenemanager.cpp(112): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\scenemanager.cpp(124): warning C4018: '<': signed/unsigned mismatch
+  Shader.cpp
+  SphereCollider.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\gameobject.h(59): warning C4018: '<': signed/unsigned mismatch
+  c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\spherecollider.cpp(19): note: see reference to function template instantiation 'std::weak_ptr<sparklezEngine::MeshFilter> sparklezEngine::GameObject::getComponent<sparklezEngine::MeshFilter>(void)' being compiled
+  Transform.cpp
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\transform.cpp(227): warning C4018: '<': signed/unsigned mismatch
+c:\users\zazea\desktop\sparklez\sparklezengineredux\sparklezengineredux\include\transform.cpp(269): warning C4018: '<': signed/unsigned mismatch
+  Window.cpp
+  Generating Code...
+  SparkleZEngineRedux.vcxproj -> C:\Users\Zazea\Desktop\Sparklez\SparkleZEngineRedux\Debug\SparkleZEngineRedux.exe
