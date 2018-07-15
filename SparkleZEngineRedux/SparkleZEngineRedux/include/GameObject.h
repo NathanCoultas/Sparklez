@@ -84,6 +84,7 @@ namespace sparklezEngine
 	};
 
 	std::weak_ptr<Transform> GetTransform();
+	void SetParent(std::weak_ptr<Transform> _transform);
 
   private:
 	int m_Layer;

@@ -9,6 +9,7 @@ Component Setup, inherits from object.
 namespace sparklezEngine
 {
 	class GameObject;
+	class Transform;
 	class Application;
 
 	class Component : public Object
@@ -35,7 +36,8 @@ namespace sparklezEngine
 		void SetActive(bool _ActiveState);
 		bool IsActive();
 
-		std::weak_ptr<GameObject> getMyGameObject();
+		std::weak_ptr<GameObject> GetGameObject();
+		std::weak_ptr<Transform> GetTransform();
 
 	private:
 		std::weak_ptr<GameObject> m_MyGameObject;

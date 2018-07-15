@@ -27,10 +27,12 @@ namespace sparklezEngine
 
 		return m_MainCamera.lock()->getComponent<Camera>();
 	}
+
 	std::vector<std::weak_ptr<GameObject>>& sparklezEngine::Camera::GetAllCameras()
 	{
 		return m_SceneCameras;
 	}
+
 	void Camera::SetasMainCamera(std::weak_ptr<GameObject> _Cam)
 	{
 		if (m_MainCamera.lock() == NULL)
@@ -94,9 +96,9 @@ namespace sparklezEngine
       if (m_MainCamera.lock() == NULL)
       {
          Console::DebugMessage("MainCamera added");
-         m_MainCamera = std::weak_ptr<GameObject>(getMyGameObject());
+         m_MainCamera = std::weak_ptr<GameObject>(GetGameObject());
       }
-      m_SceneCameras.push_back(std::weak_ptr<GameObject>(getMyGameObject()));
+      m_SceneCameras.push_back(std::weak_ptr<GameObject>(GetGameObject()));
 	}
 
 	void Camera::Start()
@@ -113,7 +115,7 @@ namespace sparklezEngine
 
 		for (int i = 0; i < m_SceneCameras.size(); i++)
 		{
-			if (m_SceneCameras.at(i).lock() == getMyGameObject().lock())
+			if (m_SceneCameras.at(i).lock() == GetGameObject().lock())
 			{
 				m_SceneCameras.erase( m_SceneCameras.begin() + i);
 				i--;

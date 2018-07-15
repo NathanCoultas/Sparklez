@@ -102,37 +102,51 @@ namespace sparklezEngine
 	m_localRotation += _inputvec;
   }
 
-
+  //Returns this objects position, postional data is relitive to the parents positon
   glm::vec3 Transform::GetPostion()
   {
-	Transform* l_transform = this;
-	glm::vec3 l_position = m_localPosition;
+	glm::vec3 return_position = m_localPosition;
 
-	/*
-	while (m_Parent.lock())
+	//no parent = instant return
+	if (m_Parent.lock() == NULL)
 	{
-	//has parent
-	l_position = l_position + l_transform->GetLocalPosition();
-	l_transform = l_transform->GetParentTransform().lock();
-	}*/
+	  return m_localPosition;
+	}
+	else
+	{
+	  std::weak_ptr<Transform> l_transform = GetParentTransform();
+	  while (l_transform.lock() != NULL)
+	  {
+		return_position += l_transform.lock()->m_localPosition;
+		l_transform = l_transform.lock()->GetParentTransform();
+
+	  }
+	}
+
+	//l_position += glm::quat(GetRotation()) * l_transform.lock()->m_localPosition;
 
 	return m_localPosition;
   }
 
+  //Returns this objects rotation, postional data is relitive to the parents positon
   glm::vec3 Transform::GetRotation()
   {
-	std::weak_ptr<Transform> l_transform;
+	std::weak_ptr<Transform> l_transform = GetGameObject().lock()->GetTransform();
 	glm::vec3 l_rotation = m_localRotation;
 
-	/*
-	while (m_Parent.lock())
+	//no parent = instant return
+	if (m_Parent.lock() == NULL)
 	{
-	//has parent
-	l_rotation = l_rotation + l_transform.lock()->GetLocalRotation();
-	l_transform = l_transform.lock()->GetParentTransform().lock();
+	  return m_localRotation;
 	}
-	*/
-
+	else
+	{
+	  while (l_transform.lock()->m_Parent.lock())
+	  {
+		l_rotation += l_transform.lock()->m_localRotation;
+		l_transform = l_transform.lock()->GetParentTransform();
+	  }
+	}
 	return m_localRotation;
   }
 
@@ -154,29 +168,6 @@ namespace sparklezEngine
 	l_rotationMat = glm::rotate(l_rotationMat, glm::radians(GetRotation().x), glm::vec3(1.0f, 0, 0));
 	l_rotationMat = glm::rotate(l_rotationMat, glm::radians(GetRotation().y), glm::vec3(0, 1.0f, 0));
 	return glm::normalize(glm::vec3(glm::vec4(l_DirectionVec, 0.0f) * l_rotationMat));;
-
-	/*
-//REPLACE
-	glm::vec3 l_rtrnVec = glm::vec3(0, 0, 1);
-	if (GetRotation().x != 0)
-	{
-	l_rtrnVec.y = (cos(GetRotation().x) * l_DirectionVec.y) - (sin(GetRotation().x) * l_DirectionVec.z);
-	l_rtrnVec.z = (sin(GetRotation().x) * l_DirectionVec.y) + (cos(GetRotation().x) * l_DirectionVec.z);
-	}
-
-	if (GetRotation().y != 0)
-	{
-	l_rtrnVec.z = (cos(GetRotation().y) * l_DirectionVec.z) - (sin(GetRotation().y) * l_DirectionVec.x);
-	l_rtrnVec.x = (sin(GetRotation().y) * l_DirectionVec.z) + (cos(GetRotation().y) * l_DirectionVec.x);
-	}
-
-	if (GetRotation().z != 0)
-	{
-	l_rtrnVec.x = (cos(GetRotation().z) * l_DirectionVec.x) - (sin(GetRotation().z) * l_DirectionVec.y);
-	l_rtrnVec.y = (sin(GetRotation().z) * l_DirectionVec.x) + (cos(GetRotation().z) * l_DirectionVec.y);
-	}
-	*/
-
   }
 
   glm::vec3 Transform::GetUpVector()
@@ -237,14 +228,11 @@ namespace sparklezEngine
 	//adds this transform to the new parents children
 	if (_transform.lock() != NULL)
 	{
-	  _transform.lock()->m_Children.push_back(std::shared_ptr<Transform>(this));
+	  _transform.lock()->m_Children.push_back(GetGameObject().lock()->GetTransform());
 	}
 
-	//resets global position and then realigns it with new parent
-	m_Parent = std::weak_ptr<Transform>();
-	SetPosition(GetPostion());
-	SetRotation(GetRotation());
-	m_Parent = _transform;
+	//resets position data and then realigns it with new parent
+	m_Parent = _transform.lock();
 	SetPosition(GetPostion());
 	SetRotation(GetRotation());
   }
@@ -268,7 +256,7 @@ namespace sparklezEngine
   {
 	for (int i = 0; i < m_Children.size(); i++)
 	{
-	  if (m_Children.at(i).lock()->getMyGameObject().lock()->getName() == _name)
+	  if (m_Children.at(i).lock()->GetGameObject().lock()->getName() == _name)
 	  {
 		return m_Children.at(i);
 	  }
@@ -288,12 +276,14 @@ namespace sparklezEngine
 	m_Children.clear();
   }
 
+  //tells this tranform to look at a position in the world
   void Transform::LookAt(glm::vec3 _worldPos)
   {
 	//work on later
   }
+
   std::string Transform::GetGameObjectName()
   {
-	return getMyGameObject().lock()->getName();
+	return GetGameObject().lock()->getName();
   }
 }

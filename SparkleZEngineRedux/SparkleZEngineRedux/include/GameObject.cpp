@@ -14,6 +14,7 @@ namespace sparklezEngine
 	m_Awake = false;
 
 	int l_IntName = SceneManager::GetSceneObjects().size();
+	//can check if another gameobject already exists with this name in scene;
 	m_Name = "GameObject(" + std::to_string(l_IntName) + ")";
 
   }
@@ -110,6 +111,11 @@ namespace sparklezEngine
   std::weak_ptr<Transform> GameObject::GetTransform()
   {
 	return getComponent<Transform>();
+  }
+
+  void GameObject::SetParent(std::weak_ptr<Transform> _transform)
+  {
+	GetTransform().lock()->SetParent(_transform);
   }
 
   void GameObject::Destroy()

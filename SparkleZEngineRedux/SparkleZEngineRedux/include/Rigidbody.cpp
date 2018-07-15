@@ -9,7 +9,7 @@ namespace sparklezEngine
 {
   void Rigidbody::Awake()
   {
-	if (getMyGameObject().lock()->IsStatic() == true)
+	if (GetGameObject().lock()->IsStatic() == true)
 	{
 	  m_IsKimetic = true;
 	  m_Mass = 0.0f;
@@ -20,9 +20,9 @@ namespace sparklezEngine
 	  m_Mass = 1.0f;
 	}
 
-	if (getMyGameObject().lock()->getComponent<BoxCollider>().lock() != NULL || getMyGameObject().lock()->getComponent<SphereCollider>().lock() != NULL)
+	if (GetGameObject().lock()->getComponent<BoxCollider>().lock() != NULL || GetGameObject().lock()->getComponent<SphereCollider>().lock() != NULL)
 	{
-	  std::shared_ptr<Transform> l_Trans = getMyGameObject().lock()->GetTransform().lock();
+	  std::shared_ptr<Transform> l_Trans = GetTransform().lock();
 
 	  btTransform l_BtTrans;
 	  btQuaternion l_btquat(l_Trans->GetRotation().y, l_Trans->GetRotation().x, l_Trans->GetRotation().z);
@@ -34,26 +34,24 @@ namespace sparklezEngine
 	  btScalar l_mass = m_Mass;
 	  btVector3 l_fallInertia(0, 0, 0);
 
-	  if (getMyGameObject().lock()->getComponent<BoxCollider>().lock() == NULL)
+	  if (GetGameObject().lock()->getComponent<BoxCollider>().lock() == NULL)
 	  {
-		getMyGameObject().lock()->getComponent<SphereCollider>().lock()->GetCollider().lock()->calculateLocalInertia(l_mass, l_fallInertia);
-		btRigidBody::btRigidBodyConstructionInfo l_fallRigidBodyCI(l_mass, m_fallMotionState.get(), getMyGameObject().lock()->getComponent<SphereCollider>().lock()->GetCollider().lock().get(), l_fallInertia);
+		GetGameObject().lock()->getComponent<SphereCollider>().lock()->GetCollider().lock()->calculateLocalInertia(l_mass, l_fallInertia);
+		btRigidBody::btRigidBodyConstructionInfo l_fallRigidBodyCI(l_mass, m_fallMotionState.get(), GetGameObject().lock()->getComponent<SphereCollider>().lock()->GetCollider().lock().get(), l_fallInertia);
 		m_RigidBody = std::shared_ptr<btRigidBody>(new btRigidBody(l_fallRigidBodyCI));
-		m_IsKimetic = getMyGameObject().lock()->getComponent<SphereCollider>().lock()->IsKimetic();
+		m_IsKimetic = GetGameObject().lock()->getComponent<SphereCollider>().lock()->IsKimetic();
 
-		//m_RigidBody.get()->isStaticObject
-		//wtf is going on with this shit
-		//Objects are ignoring collision, not sure why.
+		//m_RigidBody.get()->isStaticObject		
 
 		//m_RigidBody.get()->saveKinematicState(IsKimetic());
 		//m_RigidBody.get()->setFlags(2);
 	  }
 	  else
 	  {
-		getMyGameObject().lock()->getComponent<BoxCollider>().lock()->GetCollider().lock()->calculateLocalInertia(l_mass, l_fallInertia);
-		btRigidBody::btRigidBodyConstructionInfo l_fallRigidBodyCI(l_mass, m_fallMotionState.get(), getMyGameObject().lock()->getComponent<BoxCollider>().lock()->GetCollider().lock().get(), l_fallInertia);
+		GetGameObject().lock()->getComponent<BoxCollider>().lock()->GetCollider().lock()->calculateLocalInertia(l_mass, l_fallInertia);
+		btRigidBody::btRigidBodyConstructionInfo l_fallRigidBodyCI(l_mass, m_fallMotionState.get(), GetGameObject().lock()->getComponent<BoxCollider>().lock()->GetCollider().lock().get(), l_fallInertia);
 		m_RigidBody = std::shared_ptr<btRigidBody>(new btRigidBody(l_fallRigidBodyCI));
-		m_IsKimetic = getMyGameObject().lock()->getComponent<BoxCollider>().lock()->IsKimetic();
+		m_IsKimetic = GetGameObject().lock()->getComponent<BoxCollider>().lock()->IsKimetic();
 
 	  }
 	  SceneManager::GetDynamicWorld()->addRigidBody(m_RigidBody.get());
@@ -65,7 +63,7 @@ namespace sparklezEngine
   }
   void Rigidbody::FixedUpdate()
   {
-	if (m_IsKimetic == false && getMyGameObject().lock()->IsStatic() == false)
+	if (m_IsKimetic == false && GetGameObject().lock()->IsStatic() == false)
 	{
 	  btTransform l_Trans;
 	  m_RigidBody.get()->getMotionState()->getWorldTransform(l_Trans);
@@ -80,8 +78,8 @@ namespace sparklezEngine
 	  float l_z = l_Trans.getOrigin().getZ();
 	  l_Trans.getRotation().getEulerZYX(l_ScalRotZ, l_ScalRotY, l_ScalRotX);
 
-	  getMyGameObject().lock()->GetTransform().lock()->SetPosition(l_x, l_y, l_z);
-	  getMyGameObject().lock()->GetTransform().lock()->SetRotation(l_ScalRotX, l_ScalRotY, l_ScalRotZ);
+	  GetTransform().lock()->SetPosition(l_x, l_y, l_z);
+	  GetTransform().lock()->SetRotation(l_ScalRotX, l_ScalRotY, l_ScalRotZ);
 	}
   }
   float Rigidbody::GetMass()
@@ -100,7 +98,7 @@ namespace sparklezEngine
 
   void Rigidbody::ForceUpdate()
   {
-	std::shared_ptr<Transform> l_Trans = getMyGameObject().lock()->GetTransform().lock();
+	std::shared_ptr<Transform> l_Trans = GetTransform().lock();
 
 	btTransform l_BtTrans;
 	l_BtTrans.setOrigin(btVector3(l_Trans->GetPostion().x, l_Trans->GetPostion().y, l_Trans->GetPostion().z));
@@ -109,15 +107,15 @@ namespace sparklezEngine
 
   void Rigidbody::UpdateKimetic()
   {
-	if (getMyGameObject().lock()->getComponent<BoxCollider>().lock() != NULL || getMyGameObject().lock()->getComponent<SphereCollider>().lock() != NULL)
+	if (GetGameObject().lock()->getComponent<BoxCollider>().lock() != NULL || GetGameObject().lock()->getComponent<SphereCollider>().lock() != NULL)
 	{
-	  if (getMyGameObject().lock()->getComponent<BoxCollider>().lock() == NULL)
+	  if (GetGameObject().lock()->getComponent<BoxCollider>().lock() == NULL)
 	  {
-		m_IsKimetic = getMyGameObject().lock()->getComponent<SphereCollider>().lock()->IsKimetic();
+		m_IsKimetic = GetGameObject().lock()->getComponent<SphereCollider>().lock()->IsKimetic();
 	  }
 	  else
 	  {
-		m_IsKimetic = getMyGameObject().lock()->getComponent<BoxCollider>().lock()->IsKimetic();
+		m_IsKimetic = GetGameObject().lock()->getComponent<BoxCollider>().lock()->IsKimetic();
 	  }
 	}
 	else

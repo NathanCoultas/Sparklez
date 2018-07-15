@@ -143,14 +143,12 @@ namespace sparklezEngine
 
   void SceneManager::InitPhysicsWorld(float _XGrav, float _YGrav, float _ZGrav)
   {
-
     m_broadphase = new btDbvtBroadphase();
     m_collisionConfiguration = new btDefaultCollisionConfiguration();
     m_dispatcher = new btCollisionDispatcher(m_collisionConfiguration);
     m_solver = new btSequentialImpulseConstraintSolver;
     m_dynamicsWorld = new btDiscreteDynamicsWorld(m_dispatcher, m_broadphase, m_solver, m_collisionConfiguration);
     m_dynamicsWorld->setGravity(btVector3(_XGrav, _YGrav, _ZGrav));
-
   }
 
   float SceneManager::getDeltaTime()

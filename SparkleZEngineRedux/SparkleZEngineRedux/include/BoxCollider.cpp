@@ -13,33 +13,36 @@ namespace sparklezEngine
 	m_BoxSize = glm::vec3(0,0,0);
 	m_IsKimetic = false;
   }
+
   void BoxCollider::Start()
   {
-	if (getMyGameObject().lock()->getComponent<MeshFilter>().lock() != NULL)
+	if (GetGameObject().lock()->getComponent<MeshFilter>().lock() != NULL)
 	{
-	  if(getMyGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock() != NULL)
+	  if(GetGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock() != NULL)
 	  { 
-		glm::vec3 l_boxbounds = getMyGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock()->l_MaxSize;
+		glm::vec3 l_boxbounds = GetGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock()->l_MaxSize;
 		if (l_boxbounds != glm::vec3(0, 0, 0))
 		{
-		  m_BoxSize = ((l_boxbounds / glm::vec3(2,2,2)) * getMyGameObject().lock()->GetTransform().lock()->GetTransformScale());
+		  m_BoxSize = ((l_boxbounds / glm::vec3(2,2,2)) * GetTransform().lock()->GetTransformScale());
 		}
 		
 	  }
 	}
 	if (m_BoxSize == glm::vec3(0, 0, 0))
 	{
-	  m_BoxSize = glm::vec3(1, 1, 1) * getMyGameObject().lock()->GetTransform().lock()->GetTransformScale();
+	  m_BoxSize = glm::vec3(1, 1, 1) * GetTransform().lock()->GetTransformScale();
 	}
 	
 	m_Collider = std::shared_ptr<btCollisionShape>(new btBoxShape(btVector3(m_BoxSize.x,m_BoxSize.y,m_BoxSize.z)));
 
-	if (getMyGameObject().lock()->getComponent<Rigidbody>().lock() == NULL)
+	if (GetGameObject().lock()->getComponent<Rigidbody>().lock() == NULL)
 	{
-	  getMyGameObject().lock()->addComponent<Rigidbody>();
+	  GetGameObject().lock()->addComponent<Rigidbody>();
 	}
 
   }
+
+  //unused
 
   void BoxCollider::Update()
   {

@@ -8,7 +8,7 @@ namespace sparklezEngine
   {
     m_LightIntensity = 5.0f;
     m_Range = 30.0f;
-    SceneManager::GetSceneLights().push_back(getMyGameObject());
+    SceneManager::GetSceneLights().push_back(GetGameObject());
   }
 
   PointLight::~PointLight()
@@ -18,24 +18,24 @@ namespace sparklezEngine
 
   void PointLight::Awake()
   {
-    if (getMyGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
+    if (GetGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
+    else if (GetGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
+    else if (GetGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
   }
 
   void PointLight::Destroy()
   {
     SetDestroyed(true);
-    SceneManager::RemoveLightFromScene(getMyGameObject());
+    SceneManager::RemoveLightFromScene(GetGameObject());
   }
 
   void PointLight::SaveComponent()
@@ -51,7 +51,7 @@ namespace sparklezEngine
   DirectionalLight::DirectionalLight()
   {
     m_LightIntensity = 5.0f;
-    SceneManager::GetSceneLights().push_back(getMyGameObject());
+    SceneManager::GetSceneLights().push_back(GetGameObject());
   }
 
   DirectionalLight::~DirectionalLight()
@@ -61,23 +61,23 @@ namespace sparklezEngine
 
   void DirectionalLight::Awake()
   {
-    if (getMyGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
+    if (GetGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
+    else if (GetGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
+    else if (GetGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
   }
   void DirectionalLight::Destroy()
   {
     SetDestroyed(true);
-    SceneManager::RemoveLightFromScene(getMyGameObject());
+    SceneManager::RemoveLightFromScene(GetGameObject());
   }
   void DirectionalLight::SaveComponent()
   {
@@ -91,7 +91,7 @@ namespace sparklezEngine
   {
     m_LightIntensity = 5.0f;
     m_Range = 30.0f;
-    SceneManager::GetSceneLights().push_back(getMyGameObject());
+    SceneManager::GetSceneLights().push_back(GetGameObject());
   }
   SpotLight::~SpotLight()
   {
@@ -99,23 +99,23 @@ namespace sparklezEngine
   }
   void SpotLight::Awake()
   {
-    if (getMyGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
+    if (GetGameObject().lock()->getComponent<PointLight>().lock() == std::shared_ptr<PointLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
+    else if (GetGameObject().lock()->getComponent<DirectionalLight>().lock() == std::shared_ptr<DirectionalLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
-    else if (getMyGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
+    else if (GetGameObject().lock()->getComponent<SpotLight>().lock() == std::shared_ptr<SpotLight>())
     {
-      Console::ErrorMessage(getMyGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
+      Console::ErrorMessage(GetGameObject().lock()->getName() + " Has two or more lights attached, may not display light correctly.");
     }
   }
   void SpotLight::Destroy()
   {
     SetDestroyed(true);
-    SceneManager::RemoveLightFromScene(getMyGameObject());
+    SceneManager::RemoveLightFromScene(GetGameObject());
   }
   void SpotLight::SaveComponent()
   {

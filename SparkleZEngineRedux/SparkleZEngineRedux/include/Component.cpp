@@ -1,4 +1,6 @@
 #include "Component.h"
+#include "Transform.h"
+#include "GameObject.h"
 
 namespace sparklezEngine
 {
@@ -57,9 +59,13 @@ namespace sparklezEngine
 		return m_IsActive;
 	}
 
-	std::weak_ptr<GameObject> Component::getMyGameObject()
+	std::weak_ptr<GameObject> Component::GetGameObject()
 	{
 		return m_MyGameObject;
 	}
 
+	std::weak_ptr<Transform> Component::GetTransform()
+	{
+	  return m_MyGameObject.lock()->GetTransform();
+	}
 }

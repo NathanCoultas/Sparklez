@@ -119,6 +119,8 @@ namespace sparklezEngine
     SceneManager::InitPhysicsWorld(0, -10, 0);
     GraphicsCache::SetupShaders();
 
+	//TEST SCENE DUMP
+	
     //spawn in some objs
     new GameObject("Cube");
     new GameObject("Cube (1)");
@@ -143,7 +145,12 @@ namespace sparklezEngine
 
     //use custom camera behaviour
     SceneManager::FindGameObjectByName("MainCamera").lock()->addComponent<Editor>();
+	SceneManager::FindGameObjectByName("MainCamera").lock()->GetTransform().lock()->SetPosition(2.0f,5.0f,0.0f);
+	SceneManager::FindGameObjectByName("MainCamera").lock()->GetTransform().lock()->SetParent(SceneManager::FindGameObjectByName("Cube").lock()->GetTransform());
     //SceneManager::FindGameObjectByName("MainCamera").lock()->addComponent<SphereCollider>().lock()->SetKimetic(true);
+	//END TEST SCENE DUMP
+
+	//add setparent to gameobj.
 
     //setup time
     m_time = 0;
@@ -187,7 +194,7 @@ namespace sparklezEngine
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glViewport(0, 0, Window::getWidth(), Window::getHeight());
 
-    if (Camera::GetMainCamera().lock().get() != NULL && Camera::GetMainCamera().lock()->getMyGameObject().lock()->IsActive() == true)
+    if (Camera::GetMainCamera().lock().get() != NULL && Camera::GetMainCamera().lock()->GetGameObject().lock()->IsActive() == true)
     {
       Colour m_ClearC = Camera::GetMainCamera().lock()->GetBackgroundColour();
       glClearColor(m_ClearC.m_r, m_ClearC.m_g, m_ClearC.m_b, m_ClearC.m_a);
@@ -203,7 +210,7 @@ namespace sparklezEngine
       }
     }
 
-    //post render / gui call can be added here?
+    //post render / gui call can be added here
   }
 
   void Application::engineloop()
@@ -213,8 +220,8 @@ namespace sparklezEngine
     //newframe
     m_FrameCount++;
 
-    //----
-    //Input handler
+    
+    //SDL Input handler
     //----
     SDL_Event m_event;
     while (SDL_PollEvent(&m_event))
@@ -294,21 +301,24 @@ namespace sparklezEngine
       Console::DebugMessage("FPS: ", m_FrameCount);
       m_FrameCount = 0;
     }
-
     //----
+
+
     //Editor Update Mode
     //----
     if (SceneManager::m_EditMode == true && SceneManager::m_Runtime == false)
     {
-     
+     //TO DO
 
     }
     //----
+
+
     //Runtime Update Mode
     //----
     else if (SceneManager::m_EditMode == false && SceneManager::m_Runtime == true)
     {
-      //----
+      
       //Update Call
       //----
       for (size_t l_i = 0; l_i < SceneManager::m_SceneObjects.size(); l_i++)
@@ -318,16 +328,17 @@ namespace sparklezEngine
           SceneManager::m_SceneObjects.at(l_i)->Update();
         }
       }
-      //----
+      
       //Fixed Update Call
       //----
       if ((l_time / 1000.0f) >= m_Fixedtime)
       {
         m_Fixedtime += 0.02f;
-        //----
+        
         //Bullet Step Simulation
+		//----
         SceneManager::m_dynamicsWorld->stepSimulation(1 / 60.f, 10);
-        //----      
+           
         //Fixed Update Call
         //----
         for (size_t l_i = 0; l_i < sparklezEngine::SceneManager::m_SceneObjects.size(); l_i++)

@@ -28,9 +28,9 @@ namespace sparklezEngine
 
 	void MeshRenderer::Awake()
 	{
-		if (getMyGameObject().lock()->getComponent<MeshFilter>().lock() == NULL)
+		if (GetGameObject().lock()->getComponent<MeshFilter>().lock() == NULL)
 		{
-			getMyGameObject().lock()->addComponent<MeshFilter>();
+		  GetGameObject().lock()->addComponent<MeshFilter>();
 		}
 	}
 
@@ -48,9 +48,9 @@ namespace sparklezEngine
 
 	void MeshRenderer::SetMeshRef(std::weak_ptr<Mesh> _mesh)
 	{
-		if (getMyGameObject().lock()->getComponent<MeshFilter>().lock())
+		if (GetGameObject().lock()->getComponent<MeshFilter>().lock())
 		{
-			getMyGameObject().lock()->getComponent<MeshFilter>().lock()->SetMeshRef(_mesh);
+			GetGameObject().lock()->getComponent<MeshFilter>().lock()->SetMeshRef(_mesh);
 		}
 		else
 		{
@@ -60,9 +60,9 @@ namespace sparklezEngine
 
 	std::weak_ptr<Mesh> MeshRenderer::GetMesh()
 	{
-		if (getMyGameObject().lock()->getComponent<MeshFilter>().lock())
+		if (GetGameObject().lock()->getComponent<MeshFilter>().lock())
 		{
-			return getMyGameObject().lock()->getComponent<MeshFilter>().lock()->GetMesh();
+			return GetGameObject().lock()->getComponent<MeshFilter>().lock()->GetMesh();
 		}
 		else
 		{
@@ -74,9 +74,9 @@ namespace sparklezEngine
 
 	void MeshRenderer::SetMeshRef(std::string _filename)
 	{
-		if (getMyGameObject().lock()->getComponent<MeshFilter>().lock())
+		if (GetGameObject().lock()->getComponent<MeshFilter>().lock())
 		{
-			getMyGameObject().lock()->getComponent<MeshFilter>().lock()->SetMeshRef(_filename);
+		  GetGameObject().lock()->getComponent<MeshFilter>().lock()->SetMeshRef(_filename);
 		}
 		else
 		{
@@ -87,7 +87,7 @@ namespace sparklezEngine
 	void MeshRenderer::Render()
 	{
 		
-		std::weak_ptr<MeshFilter> l_MeshFilter = getMyGameObject().lock()->getComponent<MeshFilter>();
+		std::weak_ptr<MeshFilter> l_MeshFilter = GetGameObject().lock()->getComponent<MeshFilter>();
 		if (l_MeshFilter.lock() == NULL)
 		{
 			Console::DebugMessage("MeshFilter not attached to GameObject");
@@ -102,7 +102,7 @@ namespace sparklezEngine
 			return;
 		}
 
-		std::weak_ptr<Transform> l_MyTrans = getMyGameObject().lock()->getComponent<Transform>();
+		std::weak_ptr<Transform> l_MyTrans = GetGameObject().lock()->getComponent<Transform>();
 
 		if (l_MyTrans.lock() == NULL)
 		{
@@ -110,11 +110,11 @@ namespace sparklezEngine
 			return;
 		}
 		
-		glm::mat4 l_TransMat = glm::translate(glm::mat4(1.0f),getMyGameObject().lock()->GetTransform().lock()->GetPostion());
-		glm::mat4 l_ScalMat = glm::scale(glm::mat4(1.0f), getMyGameObject().lock()->GetTransform().lock()->GetTransformScale());
-		glm::mat4 l_Rotmat = glm::toMat4(glm::quat(getMyGameObject().lock()->GetTransform().lock()->GetRotation()));
+		glm::mat4 l_TransMat = glm::translate(glm::mat4(1.0f), GetTransform().lock()->GetPostion());
+		glm::mat4 l_ScalMat = glm::scale(glm::mat4(1.0f), GetTransform().lock()->GetTransformScale());
+		glm::mat4 l_Rotmat = glm::toMat4(glm::quat(GetTransform().lock()->GetRotation()));
 
-		glm::mat4 l_invModelMatrix = glm::rotate(glm::mat4(1.0f), -getMyGameObject().lock()->GetTransform().lock()->GetRotation().y, glm::vec3(0, 1, 0));
+		glm::mat4 l_invModelMatrix = glm::rotate(glm::mat4(1.0f), -GetTransform().lock()->GetRotation().y, glm::vec3(0, 1, 0));
 		glm::mat4 l_modelMatrix = l_TransMat * l_Rotmat * l_ScalMat;
 		// obtain left-handed coordinate system by multiplying a negative Z scale on ModelView matrix
 

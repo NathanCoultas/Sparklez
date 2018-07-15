@@ -10,16 +10,19 @@
 #include "BoxCollider.h"
 #include "SphereCollider.h"
 
-
 #include <string>
 namespace sparklezEngine
 {
-  //This function is called as soon as possible after the object has been made both in edit time and play time.
+  //vars
+  std::weak_ptr<Transform>  l_CamTrans;
+  float l_MouseSens = 1.0f;
+
   void Editor::Awake()
   {
     setName("Editor");
 
     SDL_SetRelativeMouseMode(SDL_TRUE);
+	l_CamTrans = GetTransform();
   }
   void Editor::Start()
   {
@@ -27,13 +30,15 @@ namespace sparklezEngine
   }
   void Editor::Update()
   {
-    float l_MouseSens = 1.0f;
+	//rework this code as it's using old Get system
+
     float l_RotX = Input::GetMouseMotion().x * l_MouseSens;
     float l_RotY = Input::GetMouseMotion().y * l_MouseSens;
 
-    getMyGameObject().lock()->GetTransform().lock()->ModifyRotation(-l_RotY, l_RotX, 0);
+	l_CamTrans.lock()->ModifyRotation(-l_RotY, l_RotX, 0);
 
-    std::weak_ptr<Transform>  l_CamTrans = SceneManager::FindGameObjectByName("MainCamera").lock()->GetTransform();
+    //std::weak_ptr<Transform>  l_CamTrans = SceneManager::FindGameObjectByName("MainCamera").lock()->GetTransform();
+
     float l_CamSpeed = 5.0f * SceneManager::getDeltaTime();
     if (Input::getKeyState("1"))
     {

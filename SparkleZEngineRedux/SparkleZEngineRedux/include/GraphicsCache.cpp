@@ -120,7 +120,7 @@ namespace sparklezEngine
       return;
     }
 
-    glm::mat4 l_viewMat = glm::lookAt(Camera::GetMainCamera().lock()->getMyGameObject().lock()->GetTransform().lock()->GetPostion(), Camera::GetMainCamera().lock()->getMyGameObject().lock()->GetTransform().lock()->GetForwardVector() + Camera::GetMainCamera().lock()->getMyGameObject().lock()->GetTransform().lock()->GetPostion(), Camera::GetMainCamera().lock()->getMyGameObject().lock()->GetTransform().lock()->GetUpVector());
+    glm::mat4 l_viewMat = glm::lookAt(Camera::GetMainCamera().lock()->GetTransform().lock()->GetPostion(), Camera::GetMainCamera().lock()->GetTransform().lock()->GetForwardVector() + Camera::GetMainCamera().lock()->GetTransform().lock()->GetPostion(), Camera::GetMainCamera().lock()->GetTransform().lock()->GetUpVector());
     glm::mat4 l_ProjMat = Camera::GetMainCamera().lock()->GetProjectionMatrix();
 
     glUseProgram(m_DefaultModelShader->m_shaderProgram);

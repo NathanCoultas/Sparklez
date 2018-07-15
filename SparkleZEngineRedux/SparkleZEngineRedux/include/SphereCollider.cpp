@@ -16,11 +16,11 @@ namespace sparklezEngine
   }
   void SphereCollider::Start()
   {
-	if (getMyGameObject().lock()->getComponent<MeshFilter>().lock() != NULL)
+	if (GetGameObject().lock()->getComponent<MeshFilter>().lock() != NULL)
 	{
-	  if (getMyGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock() != NULL)
+	  if (GetGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock() != NULL)
 	  {
-		glm::vec3 l_boxbounds = getMyGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock()->l_MaxSize;
+		glm::vec3 l_boxbounds = GetGameObject().lock()->getComponent<MeshFilter>().lock()->GetBounds().lock()->l_MaxSize;
 		if (l_boxbounds != glm::vec3(0, 0, 0))
 		{
 		  m_Radius = (l_boxbounds.x) / 2;
@@ -35,9 +35,9 @@ namespace sparklezEngine
 
 	m_Collider = std::shared_ptr<btCollisionShape>(new btSphereShape(m_Radius));
 
-	if (getMyGameObject().lock()->getComponent<Rigidbody>().lock() == NULL)
+	if (GetGameObject().lock()->getComponent<Rigidbody>().lock() == NULL)
 	{
-	  getMyGameObject().lock()->addComponent<Rigidbody>();
+	  GetGameObject().lock()->addComponent<Rigidbody>();
 	}
   }
   void SphereCollider::Update()

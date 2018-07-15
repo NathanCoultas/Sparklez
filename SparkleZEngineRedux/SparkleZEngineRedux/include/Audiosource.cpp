@@ -1,36 +1,33 @@
 #include "AudioSource.h"
-namespace sparklezEngine 
+namespace sparklezEngine
 {
+  AudioSource::~AudioSource()
+  {
 
+  }
 
-AudioSource::~AudioSource()
-{
+  void AudioSource::Awake()
+  {
 
-}
+  }
 
-void AudioSource::Awake()
-{
+  void AudioSource::Start()
+  {
 
-}
+  }
 
-void AudioSource::Start()
-{
+  void AudioSource::Update()
+  {
 
-}
+  }
 
-void AudioSource::Update()
-{
+  void AudioSource::FixedUpdate()
+  {
 
-}
+  }
 
-void AudioSource::FixedUpdate()
-{
-
-}
-
-void AudioSource::Destroy()
-{
-  SetDestroyed(true);
-}
-
+  void AudioSource::Destroy()
+  {
+	SetDestroyed(true);
+  }
 }
